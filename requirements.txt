@@ -1,2 +1,3 @@
 TwitterAPI
 dotenv
+feedparser
