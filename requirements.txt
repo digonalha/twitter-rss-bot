@@ -1,3 +1,2 @@
 TwitterAPI
-requests_oauthlib
 dotenv
