@@ -1,3 +1,4 @@
 TwitterAPI
-dotenv
+python-dotenv
+python-dateutil
 feedparser
