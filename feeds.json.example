@@ -1,0 +1,14 @@
+{
+    "feeds": [
+        {
+            "id": 1,
+            "name": "exemploTeste",
+            "url": "http://feeds2.feedburner.com/exemploTeste",
+            "hashtags": [
+                "exemploHashtag1",
+                "exemploHashtag2"
+            ],
+            "lastsync": "Sat, 01 Oct 2000 01:00:00 -0300"
+        }
+    ]
+}
