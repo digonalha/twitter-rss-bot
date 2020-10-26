@@ -7,6 +7,7 @@ import time
 from datetime import datetime
 import dateutil.parser
 import json
+import random
 
 load_dotenv()
 
@@ -61,8 +62,10 @@ def create_new_tweet(entry, hashtags):
 
         # debug purpose:
         tweet_published = entry.get('published', '')
+        print('****')
         print(f'[{tweet_published}] {new_tweet}')
-        api.request('statuses/update', {'status': f'{new_tweet}'})
+        print('****')
+        #api.request('statuses/update', {'status': f'{new_tweet}'})
 
         return True
     except:
@@ -101,10 +104,11 @@ def main():
                         create_new_tweet(entry, hashtags)
                         update_lastsync_on_json(item, entry_published)
 
-                    time.sleep(0.5)
+                    seconds = random.randrange(15, 120)
+                    print(f'Próxima noticia em {seconds}s')
+                    time.sleep(seconds)
         except:
-            print('Ocorreu um erro.')
-            continue
+                return
 
 
 if (__name__ == "__main__"):
