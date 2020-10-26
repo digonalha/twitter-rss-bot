@@ -8,6 +8,7 @@ from datetime import datetime
 import dateutil.parser
 import json
 import random
+from inputimeout import inputimeout, TimeoutOccurred
 
 load_dotenv()
 
@@ -81,7 +82,7 @@ def get_feed_lastsync(feed):
 
 def main():
     global list_feeds
-    print('running twitterbot')
+    print('executando o twitterbot')
     while (True):
         try:
             load_json()
@@ -108,7 +109,13 @@ def main():
                     print(f'Próxima noticia em {seconds}s')
                     time.sleep(seconds)
         except:
-                return
+            t = 0
+            try:
+                response = inputimeout(prompt='erro. fechar script? y/n >> ', timeout=5) == 'y'
+                if (response):
+                    exit()
+            except TimeoutOccurred:
+                continue
 
 
 if (__name__ == "__main__"):
