@@ -66,7 +66,7 @@ def create_new_tweet(entry, hashtags):
         print('****')
         print(f'[{tweet_published}] {new_tweet}')
         print('****')
-        #api.request('statuses/update', {'status': f'{new_tweet}'})
+        api.request('statuses/update', {'status': f'{new_tweet}'})
 
         return True
     except:
