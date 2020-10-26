@@ -104,10 +104,10 @@ def main():
                     elif (type(lastsync) is datetime and (published > lastsync)):
                         create_new_tweet(entry, hashtags)
                         update_lastsync_on_json(item, entry_published)
+                        seconds = random.randrange(15, 120)
+                        print(f'Próxima noticia em {seconds}s')
+                        time.sleep(seconds)
 
-                    seconds = random.randrange(15, 120)
-                    print(f'Próxima noticia em {seconds}s')
-                    time.sleep(seconds)
         except:
             t = 0
             try:
