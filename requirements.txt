@@ -2,3 +2,4 @@ TwitterAPI
 python-dotenv
 python-dateutil
 feedparser
+inputimeout
